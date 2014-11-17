@@ -11,11 +11,13 @@
         }
         %>
         <li class="daves-wordpress-live-search_result <%= liClass %> '">
-        <% if(DavesWordPressLiveSearchConfig.showThumbs == "true" && searchResult.attachment_thumbnail) { %>
-                <img src="<%= searchResult.attachment_thumbnail %>" class="post_thumb" />
-        <% } %>
 
-        <a href="<%= searchResult.permalink %>" class="daves-wordpress-live-search_title"><%= searchResult.post_title %></a>
+        <a href="<%= searchResult.permalink %>" class="daves-wordpress-live-search_title">
+                <% if(DavesWordPressLiveSearchConfig.showThumbs == "true" && searchResult.attachment_thumbnail) { %>
+                        <img src="<%= searchResult.attachment_thumbnail %>" class="post_thumb" />
+                <% } %>
+                <span class="result"><%= searchResult.post_title %></span>
+        </a>
 
         <% if(searchResult.post_price !== undefined) { %>
                 <p class="price"><%= searchResult.post_price %></p>
