@@ -94,6 +94,10 @@ LiveSearch.positionResults = function() {
 		searchBoxPosition.top  += parseInt(DavesWordPressLiveSearchConfig.yOffset, 10);
 		resultsElement.css('left', searchBoxPosition.left);
 		resultsElement.css('top', searchBoxPosition.top);
+
+    // Set the width based on the inherited element's width
+    resultsElement.css('width', searchBox.outerWidth());
+
 		resultsElement.css('display', 'block');
 
 		switch(DavesWordPressLiveSearchConfig.resultsDirection)
